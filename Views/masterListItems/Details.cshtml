@@ -1,0 +1,49 @@
+﻿@model ExcelToWeb.Models.masterListItems
+
+@{
+    ViewBag.Title = "Detalle de Compra";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/Styles/StyleCustomersDetails.css" rel="stylesheet" />
+
+
+<h2 class="text-primary">🧾 Detalle de Pedido</h2>
+
+<div class="details-container">
+    <div class="details-box">
+        <h4>📍 Cliente</h4>
+        <p><strong>Nombre:</strong> @Model.CustomerFName @Model.CustomerLName</p>
+        <p><strong>Email:</strong> @Model.CustomerEmail</p>
+        <p><strong>Segmento:</strong> @Model.CustomerSegment</p>
+        <p><strong>Ciudad:</strong> @Model.CustomerCity</p>
+        <p><strong>País:</strong> @Model.CustomerCountry</p>
+    </div>
+
+    <div class="details-box">
+        <h4>📦 Pedido</h4>
+        <p><strong>Producto:</strong> @Model.ProductName</p>
+        <p><strong>Precio unitario:</strong> $@Model.ProductPrice</p>
+        <p><strong>Cantidad:</strong> @Model.OrderItemQuantity</p>
+        <p><strong>Total:</strong> $@Model.OrderItemTotal</p>
+        <p><strong>Descuento:</strong> $@Model.OrderItemDiscount</p>
+        <p><strong>Ganancia:</strong> $@Model.BenefitPerOrder</p>
+    </div>
+
+    <div class="details-box">
+        <h4>📅 Envío</h4>
+        <p><strong>Fecha de pedido:</strong> @Model.OrderDateDateOrders.Value.ToShortDateString()</p>
+        <p><strong>Fecha de envío:</strong> @Model.ShippingDateDateOrders.Value.ToShortDateString()</p>
+
+        <p><strong>Modo de envío:</strong> @Model.ShippingMode</p>
+        <p><strong>Estado entrega:</strong> @Model.DeliveryStatus</p>
+    </div>
+
+    <div class="details-box">
+        <h4>💳 Pago</h4>
+        <p><strong>Tipo:</strong> @Model.Type</p>
+        <p><strong>Status pago:</strong> @(Model.ProductStatus ?? false ? "Pagado" : "No pagado")</p>
+
+        <p><strong>Ganancia por orden:</strong> $@Model.OrderProfitPerOrder</p>
+    </div>
+</div>

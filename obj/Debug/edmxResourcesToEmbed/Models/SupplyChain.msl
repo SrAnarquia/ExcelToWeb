@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Supply_ChainModelStoreContainer" CdmEntityContainer="Supply_ChainEntities1">
+    <EntitySetMapping Name="userInteractionItems">
+      <EntityTypeMapping TypeName="Supply_ChainModel.userInteractionItems">
+        <MappingFragment StoreEntitySet="userInteractionItems">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="Hour" ColumnName="Hour" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userInteractionItemsCopy">
+      <EntityTypeMapping TypeName="Supply_ChainModel.userInteractionItemsCopy">
+        <MappingFragment StoreEntitySet="userInteractionItemsCopy">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="Hour" ColumnName="Hour" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="masterListItems">
+      <EntityTypeMapping TypeName="Supply_ChainModel.masterListItems">
+        <MappingFragment StoreEntitySet="masterListItems">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="DaysForShipReal" ColumnName="DaysForShipReal" />
+          <ScalarProperty Name="DaysForShipmentScheduled" ColumnName="DaysForShipmentScheduled" />
+          <ScalarProperty Name="BenefitPerOrder" ColumnName="BenefitPerOrder" />
+          <ScalarProperty Name="SalesPerCustomer" ColumnName="SalesPerCustomer" />
+          <ScalarProperty Name="DeliveryStatus" ColumnName="DeliveryStatus" />
+          <ScalarProperty Name="LateDelivery" ColumnName="LateDelivery" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CustomerCity" ColumnName="CustomerCity" />
+          <ScalarProperty Name="CustomerCountry" ColumnName="CustomerCountry" />
+          <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
+          <ScalarProperty Name="CustomerFName" ColumnName="CustomerFName" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="CustomerLName" ColumnName="CustomerLName" />
+          <ScalarProperty Name="CustomerPassword" ColumnName="CustomerPassword" />
+          <ScalarProperty Name="CustomerSegment" ColumnName="CustomerSegment" />
+          <ScalarProperty Name="CustomerState" ColumnName="CustomerState" />
+          <ScalarProperty Name="CustomerStreet" ColumnName="CustomerStreet" />
+          <ScalarProperty Name="CustomerZipCode" ColumnName="CustomerZipCode" />
+          <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longtude" ColumnName="Longtude" />
+          <ScalarProperty Name="Market" ColumnName="Market" />
+          <ScalarProperty Name="OrderCity" ColumnName="OrderCity" />
+          <ScalarProperty Name="OrderCountry" ColumnName="OrderCountry" />
+          <ScalarProperty Name="OrderCustomerId" ColumnName="OrderCustomerId" />
+          <ScalarProperty Name="OrderDateDateOrders" ColumnName="OrderDateDateOrders" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="OrderCardpordId" ColumnName="OrderCardpordId" />
+          <ScalarProperty Name="OrderItemDiscount" ColumnName="OrderItemDiscount" />
+          <ScalarProperty Name="OrderDiscountRate" ColumnName="OrderDiscountRate" />
+          <ScalarProperty Name="OrderItemId" ColumnName="OrderItemId" />
+          <ScalarProperty Name="OrderItemProductPrice" ColumnName="OrderItemProductPrice" />
+          <ScalarProperty Name="OrderItemProfitRatio" ColumnName="OrderItemProfitRatio" />
+          <ScalarProperty Name="OrderItemQuantity" ColumnName="OrderItemQuantity" />
+          <ScalarProperty Name="Sales" ColumnName="Sales" />
+          <ScalarProperty Name="OrderItemTotal" ColumnName="OrderItemTotal" />
+          <ScalarProperty Name="OrderProfitPerOrder" ColumnName="OrderProfitPerOrder" />
+          <ScalarProperty Name="OrderRegion" ColumnName="OrderRegion" />
+          <ScalarProperty Name="OrderState" ColumnName="OrderState" />
+          <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+          <ScalarProperty Name="OrderZipCode" ColumnName="OrderZipCode" />
+          <ScalarProperty Name="ProductCardId" ColumnName="ProductCardId" />
+          <ScalarProperty Name="ProductCategoryId" ColumnName="ProductCategoryId" />
+          <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+          <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductPrice" ColumnName="ProductPrice" />
+          <ScalarProperty Name="ProductStatus" ColumnName="ProductStatus" />
+          <ScalarProperty Name="ShippingDateDateOrders" ColumnName="ShippingDateDateOrders" />
+          <ScalarProperty Name="ShippingMode" ColumnName="ShippingMode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="masterListItemsCopy">
+      <EntityTypeMapping TypeName="Supply_ChainModel.masterListItemsCopy">
+        <MappingFragment StoreEntitySet="masterListItemsCopy">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="DaysForShipReal" ColumnName="DaysForShipReal" />
+          <ScalarProperty Name="DaysForShipmentScheduled" ColumnName="DaysForShipmentScheduled" />
+          <ScalarProperty Name="BenefitPerOrder" ColumnName="BenefitPerOrder" />
+          <ScalarProperty Name="SalesPerCustomer" ColumnName="SalesPerCustomer" />
+          <ScalarProperty Name="DeliveryStatus" ColumnName="DeliveryStatus" />
+          <ScalarProperty Name="LateDelivery" ColumnName="LateDelivery" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CustomerCity" ColumnName="CustomerCity" />
+          <ScalarProperty Name="CustomerCountry" ColumnName="CustomerCountry" />
+          <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
+          <ScalarProperty Name="CustomerFName" ColumnName="CustomerFName" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="CustomerLName" ColumnName="CustomerLName" />
+          <ScalarProperty Name="CustomerPassword" ColumnName="CustomerPassword" />
+          <ScalarProperty Name="CustomerSegment" ColumnName="CustomerSegment" />
+          <ScalarProperty Name="CustomerState" ColumnName="CustomerState" />
+          <ScalarProperty Name="CustomerStreet" ColumnName="CustomerStreet" />
+          <ScalarProperty Name="CustomerZipCode" ColumnName="CustomerZipCode" />
+          <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longtude" ColumnName="Longtude" />
+          <ScalarProperty Name="Market" ColumnName="Market" />
+          <ScalarProperty Name="OrderCity" ColumnName="OrderCity" />
+          <ScalarProperty Name="OrderCountry" ColumnName="OrderCountry" />
+          <ScalarProperty Name="OrderCustomerId" ColumnName="OrderCustomerId" />
+          <ScalarProperty Name="OrderDateDateOrders" ColumnName="OrderDateDateOrders" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="OrderCardpordId" ColumnName="OrderCardpordId" />
+          <ScalarProperty Name="OrderItemDiscount" ColumnName="OrderItemDiscount" />
+          <ScalarProperty Name="OrderDiscountRate" ColumnName="OrderDiscountRate" />
+          <ScalarProperty Name="OrderItemId" ColumnName="OrderItemId" />
+          <ScalarProperty Name="OrderItemProductPrice" ColumnName="OrderItemProductPrice" />
+          <ScalarProperty Name="OrderItemProfitRatio" ColumnName="OrderItemProfitRatio" />
+          <ScalarProperty Name="OrderItemQuantity" ColumnName="OrderItemQuantity" />
+          <ScalarProperty Name="Sales" ColumnName="Sales" />
+          <ScalarProperty Name="OrderItemTotal" ColumnName="OrderItemTotal" />
+          <ScalarProperty Name="OrderProfitPerOrder" ColumnName="OrderProfitPerOrder" />
+          <ScalarProperty Name="OrderRegion" ColumnName="OrderRegion" />
+          <ScalarProperty Name="OrderState" ColumnName="OrderState" />
+          <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+          <ScalarProperty Name="OrderZipCode" ColumnName="OrderZipCode" />
+          <ScalarProperty Name="ProductCardId" ColumnName="ProductCardId" />
+          <ScalarProperty Name="ProductCategoryId" ColumnName="ProductCategoryId" />
+          <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+          <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductPrice" ColumnName="ProductPrice" />
+          <ScalarProperty Name="ProductStatus" ColumnName="ProductStatus" />
+          <ScalarProperty Name="ShippingDateDateOrders" ColumnName="ShippingDateDateOrders" />
+          <ScalarProperty Name="ShippingMode" ColumnName="ShippingMode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userLogs">
+      <EntityTypeMapping TypeName="Supply_ChainModel.userLogs">
+        <MappingFragment StoreEntitySet="userLogs">
+          <ScalarProperty Name="logTryOk" ColumnName="logTryOk" />
+          <ScalarProperty Name="logActive" ColumnName="logActive" />
+          <ScalarProperty Name="logsDateEnd" ColumnName="logsDateEnd" />
+          <ScalarProperty Name="logDateStart" ColumnName="logDateStart" />
+          <ScalarProperty Name="idUserInfo" ColumnName="idUserInfo" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usersAccessInfo">
+      <EntityTypeMapping TypeName="Supply_ChainModel.usersAccessInfo">
+        <MappingFragment StoreEntitySet="usersAccessInfo">
+          <ScalarProperty Name="userEmailConfirm" ColumnName="userEmailConfirm" />
+          <ScalarProperty Name="userEmail" ColumnName="userEmail" />
+          <ScalarProperty Name="userType" ColumnName="userType" />
+          <ScalarProperty Name="passwordHashing" ColumnName="passwordHashing" />
+          <ScalarProperty Name="passwordSalt" ColumnName="passwordSalt" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="inventoryItems">
+      <EntityTypeMapping TypeName="Supply_ChainModel.inventoryItems">
+        <MappingFragment StoreEntitySet="inventoryItems">
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Stock" ColumnName="Stock" />
+          <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="ItemImage" ColumnName="ItemImage" />
+          <ScalarProperty Name="ItemPrice" ColumnName="ItemPrice" />
+          <ScalarProperty Name="ItemDescription" ColumnName="ItemDescription" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

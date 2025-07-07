@@ -1,0 +1,73 @@
+﻿@using Newtonsoft.Json;
+@{
+    ViewBag.Title = "Reporte de Interacciones";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var jsonCategoryData = Html.Raw(ViewBag.TopCategoriesJson); // Top 5 categorías
+    var jsonProductsData = Html.Raw(ViewBag.TopProductsJson);   // Top 5 productos
+
+    
+}
+
+<link href="~/Content/Styles/StylesInteractions.css" rel="stylesheet" type="text/css" />
+
+<div class="filter-section">
+    <h2>🎯 Filtros de búsqueda</h2>
+    <div class="filters-horizontal">
+
+        <div class="filter-group">
+            <label for="startDate">Fecha inicio:</label>
+            <input type="date" id="startDate" name="startDate" />
+        </div>
+
+        <div class="filter-group">
+            <label for="endDate">Fecha fin:</label>
+            <input type="date" id="endDate" name="endDate" />
+        </div>
+
+        <div class="filter-group">
+            <label for="departmentFilter">Departamento:</label>
+            <select id="departmentFilter" name="departmentFilter">
+                <option value="">Todos</option>
+                <option value="fitness">Fitness</option>
+                <option value="electronics">Electrónica</option>
+            </select>
+        </div>
+
+        <div class="filter-group search-button-container">
+            <label>&nbsp;</label> <!-- etiqueta vacía para alinear -->
+            <div class="button-wrapper">
+                <button class="btn-apply btn-excel" title="Exportar a Excel">
+                    <span class="material-icons">description</span>
+                </button>
+                <button class="btn-apply btn-mail" title="Enviar por correo">
+                    <span class="material-icons">email</span>
+                </button>
+                <button type="submit" class="btn-apply">🔍 Buscar</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="dashboard-container">
+
+    <div class="chart-section">
+        <div class="chart-header">🏷️ Top 5 Categorías con más interacciones</div>
+        <canvas id="interactionsByCategoryChart" class="chart-canvas"
+                data-chart="@Html.Raw(jsonCategoryData.ToString().Replace("\"", "&quot;"))">
+        </canvas>
+    </div>
+
+    <div class="chart-section">
+        <div class="chart-header">📦 Top 5 Productos con más interacciones</div>
+        <canvas id="interactionsByProductsChart" class="chart-canvas"
+                data-chart="@Html.Raw(jsonProductsData.ToString().Replace("\"", "&quot;"))">
+        </canvas>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="~/Scripts/chartsInteractions/interactionsTop5Category.js"></script>
+<script src="~/Scripts/chartsInteractions/interactionsTop5Products.js"></script>

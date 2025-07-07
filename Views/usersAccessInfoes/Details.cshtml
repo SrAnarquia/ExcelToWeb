@@ -1,0 +1,51 @@
+﻿@*Se usa enumerable porque es un list lo que se manda a la view*@
+@model ExcelToWeb.Models.usersAccessInfo
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/Styles/StylesAccountInfo.css" rel="stylesheet" type="text/css" />
+
+<div class="profile-container">
+    <div class="profile-header">
+        <h2>Información del Usuario</h2>
+    </div>
+
+    <div>
+        <div class="info-label">ID de Usuario:</div>
+        <div class="info-value">@Model.idUser</div>
+
+        <div class="info-label">Nombre:</div>
+        <div class="info-value">@Model.name</div>
+
+        <div class="info-label">Apellido:</div>
+        <div class="info-value">@Model.lastName</div>
+
+        <div class="info-label">Correo Electrónico:</div>
+        <div class="info-value">@Model.userEmail</div>
+    </div>
+
+    <hr />
+
+    <div class="mt-4">
+        <h5 style="color:#0d2c54;">Cambiar contraseña</h5>
+        @using (Html.BeginForm("ChangePassword", "usersAccessInfoes", FormMethod.Post))
+        {
+            <div class="mb-3">
+                <label class="form-label">Contraseña actual</label>
+                <input type="password" name="CurrentPassword" class="form-control" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Nueva contraseña</label>
+                <input type="password" name="NewPassword" class="form-control" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Confirmar nueva contraseña</label>
+                <input type="password" name="ConfirmPassword" class="form-control" required />
+            </div>
+            <button type="submit" class="btn btn-custom">Actualizar contraseña</button>
+        }
+    </div>
+</div>

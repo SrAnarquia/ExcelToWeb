@@ -1,0 +1,661 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Supply_ChainModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="userInteractionItems">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Product" Type="varchar" MaxLength="500" />
+          <Property Name="Category" Type="varchar" MaxLength="250" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="Month" Type="varchar" MaxLength="15" />
+          <Property Name="Hour" Type="int" />
+          <Property Name="Department" Type="varchar" MaxLength="30" />
+          <Property Name="IP" Type="varchar" MaxLength="200" />
+          <Property Name="URL" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="userInteractionItemsCopy">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Product" Type="varchar" MaxLength="500" />
+          <Property Name="Category" Type="varchar" MaxLength="250" />
+          <Property Name="Date" Type="varchar" MaxLength="250" />
+          <Property Name="Month" Type="varchar" MaxLength="15" />
+          <Property Name="Hour" Type="varchar" MaxLength="10" />
+          <Property Name="Department" Type="varchar" MaxLength="30" />
+          <Property Name="IP" Type="varchar" MaxLength="200" />
+          <Property Name="URL" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="masterListItems">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="500" />
+          <Property Name="DaysForShipReal" Type="int" />
+          <Property Name="DaysForShipmentScheduled" Type="int" />
+          <Property Name="BenefitPerOrder" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SalesPerCustomer" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="DeliveryStatus" Type="varchar" MaxLength="50" />
+          <Property Name="LateDelivery" Type="bit" />
+          <Property Name="CategoryId" Type="int" />
+          <Property Name="CategoryName" Type="varchar" MaxLength="50" />
+          <Property Name="CustomerCity" Type="varchar" MaxLength="100" />
+          <Property Name="CustomerCountry" Type="varchar" MaxLength="100" />
+          <Property Name="CustomerEmail" Type="nvarchar" MaxLength="100" />
+          <Property Name="CustomerFName" Type="varchar" MaxLength="100" />
+          <Property Name="CustomerId" Type="int" />
+          <Property Name="CustomerLName" Type="varchar" MaxLength="500" />
+          <Property Name="CustomerPassword" Type="nvarchar" MaxLength="600" />
+          <Property Name="CustomerSegment" Type="varchar" MaxLength="100" />
+          <Property Name="CustomerState" Type="varchar" MaxLength="20" />
+          <Property Name="CustomerStreet" Type="varchar" MaxLength="120" />
+          <Property Name="CustomerZipCode" Type="int" />
+          <Property Name="DepartmentId" Type="int" />
+          <Property Name="DepartmentName" Type="varchar" MaxLength="500" />
+          <Property Name="Latitude" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Longtude" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Market" Type="varchar" MaxLength="250" />
+          <Property Name="OrderCity" Type="varchar" MaxLength="250" />
+          <Property Name="OrderCountry" Type="varchar" MaxLength="250" />
+          <Property Name="OrderCustomerId" Type="int" />
+          <Property Name="OrderDateDateOrders" Type="datetime" />
+          <Property Name="OrderId" Type="int" />
+          <Property Name="OrderCardpordId" Type="int" />
+          <Property Name="OrderItemDiscount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="OrderDiscountRate" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="OrderItemId" Type="int" />
+          <Property Name="OrderItemProductPrice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="OrderItemProfitRatio" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="OrderItemQuantity" Type="int" />
+          <Property Name="Sales" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="OrderItemTotal" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="OrderProfitPerOrder" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="OrderRegion" Type="varchar" MaxLength="250" />
+          <Property Name="OrderState" Type="varchar" MaxLength="250" />
+          <Property Name="OrderStatus" Type="varchar" MaxLength="250" />
+          <Property Name="OrderZipCode" Type="int" />
+          <Property Name="ProductCardId" Type="int" />
+          <Property Name="ProductCategoryId" Type="varchar" MaxLength="30" />
+          <Property Name="ProductDescription" Type="varchar" MaxLength="3000" />
+          <Property Name="ProductImage" Type="varchar" MaxLength="1000" />
+          <Property Name="ProductName" Type="varchar" MaxLength="300" />
+          <Property Name="ProductPrice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ProductStatus" Type="bit" />
+          <Property Name="ShippingDateDateOrders" Type="datetime" />
+          <Property Name="ShippingMode" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="masterListItemsCopy">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="500" />
+          <Property Name="DaysForShipReal" Type="varchar" MaxLength="30" />
+          <Property Name="DaysForShipmentScheduled" Type="varchar" MaxLength="30" />
+          <Property Name="BenefitPerOrder" Type="varchar" MaxLength="50" />
+          <Property Name="SalesPerCustomer" Type="varchar" MaxLength="50" />
+          <Property Name="DeliveryStatus" Type="varchar" MaxLength="50" />
+          <Property Name="LateDelivery" Type="varchar" MaxLength="50" />
+          <Property Name="CategoryId" Type="varchar" MaxLength="20" />
+          <Property Name="CategoryName" Type="varchar" MaxLength="50" />
+          <Property Name="CustomerCity" Type="varchar" MaxLength="100" />
+          <Property Name="CustomerCountry" Type="varchar" MaxLength="100" />
+          <Property Name="CustomerEmail" Type="nvarchar" MaxLength="100" />
+          <Property Name="CustomerFName" Type="varchar" MaxLength="100" />
+          <Property Name="CustomerId" Type="varchar" MaxLength="30" />
+          <Property Name="CustomerLName" Type="varchar" MaxLength="500" />
+          <Property Name="CustomerPassword" Type="nvarchar" MaxLength="600" />
+          <Property Name="CustomerSegment" Type="varchar" MaxLength="100" />
+          <Property Name="CustomerState" Type="varchar" MaxLength="20" />
+          <Property Name="CustomerStreet" Type="varchar" MaxLength="120" />
+          <Property Name="CustomerZipCode" Type="varchar" MaxLength="30" />
+          <Property Name="DepartmentId" Type="varchar" MaxLength="30" />
+          <Property Name="DepartmentName" Type="varchar" MaxLength="500" />
+          <Property Name="Latitude" Type="varchar" MaxLength="50" />
+          <Property Name="Longtude" Type="varchar" MaxLength="50" />
+          <Property Name="Market" Type="varchar" MaxLength="250" />
+          <Property Name="OrderCity" Type="varchar" MaxLength="250" />
+          <Property Name="OrderCountry" Type="varchar" MaxLength="250" />
+          <Property Name="OrderCustomerId" Type="varchar" MaxLength="30" />
+          <Property Name="OrderDateDateOrders" Type="varchar" MaxLength="100" />
+          <Property Name="OrderId" Type="varchar" MaxLength="30" />
+          <Property Name="OrderCardpordId" Type="varchar" MaxLength="30" />
+          <Property Name="OrderItemDiscount" Type="varchar" MaxLength="50" />
+          <Property Name="OrderDiscountRate" Type="varchar" MaxLength="50" />
+          <Property Name="OrderItemId" Type="varchar" MaxLength="30" />
+          <Property Name="OrderItemProductPrice" Type="varchar" MaxLength="50" />
+          <Property Name="OrderItemProfitRatio" Type="varchar" MaxLength="50" />
+          <Property Name="OrderItemQuantity" Type="varchar" MaxLength="30" />
+          <Property Name="Sales" Type="varchar" MaxLength="50" />
+          <Property Name="OrderItemTotal" Type="varchar" MaxLength="30" />
+          <Property Name="OrderProfitPerOrder" Type="varchar" MaxLength="50" />
+          <Property Name="OrderRegion" Type="varchar" MaxLength="250" />
+          <Property Name="OrderState" Type="varchar" MaxLength="250" />
+          <Property Name="OrderStatus" Type="varchar" MaxLength="250" />
+          <Property Name="OrderZipCode" Type="varchar" MaxLength="50" />
+          <Property Name="ProductCardId" Type="varchar" MaxLength="30" />
+          <Property Name="ProductCategoryId" Type="varchar" MaxLength="30" />
+          <Property Name="ProductDescription" Type="varchar" MaxLength="3000" />
+          <Property Name="ProductImage" Type="varchar" MaxLength="1000" />
+          <Property Name="ProductName" Type="varchar" MaxLength="300" />
+          <Property Name="ProductPrice" Type="varchar" MaxLength="50" />
+          <Property Name="ProductStatus" Type="varchar" MaxLength="40" />
+          <Property Name="ShippingDateDateOrders" Type="datetime" />
+          <Property Name="ShippingMode" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="inventoryItems">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ItemName" Type="varchar" MaxLength="400" Nullable="false" />
+          <Property Name="ItemDescription" Type="varchar" MaxLength="1000" />
+          <Property Name="ItemPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ItemImage" Type="varchar" MaxLength="1000" />
+          <Property Name="CategoryName" Type="varchar" MaxLength="100" />
+          <Property Name="DepartmentName" Type="varchar" MaxLength="100" />
+          <Property Name="ProductImage" Type="varchar" MaxLength="1000" />
+          <Property Name="Stock" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="userLogs">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idUserInfo" Type="int" />
+          <Property Name="logDateStart" Type="int" />
+          <Property Name="logsDateEnd" Type="int" />
+          <Property Name="logActive" Type="bit" />
+          <Property Name="logTryOk" Type="bit" />
+        </EntityType>
+        <EntityType Name="usersAccessInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idUser" Type="varchar" MaxLength="250" />
+          <Property Name="name" Type="varchar" MaxLength="250" />
+          <Property Name="lastName" Type="varchar" MaxLength="250" />
+          <Property Name="passwordSalt" Type="varchar" MaxLength="800" />
+          <Property Name="passwordHashing" Type="varchar" MaxLength="800" />
+          <Property Name="userType" Type="int" />
+          <Property Name="userEmail" Type="nvarchar" MaxLength="500" />
+          <Property Name="userEmailConfirm" Type="bit" />
+        </EntityType>
+        <Association Name="Fk_usersAccessInfo">
+          <End Role="usersAccessInfo" Type="Self.usersAccessInfo" Multiplicity="0..1" />
+          <End Role="userLogs" Type="Self.userLogs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usersAccessInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="userLogs">
+              <PropertyRef Name="idUserInfo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Supply_ChainModelStoreContainer">
+          <EntitySet Name="userInteractionItems" EntityType="Self.userInteractionItems" Schema="logsInteractionsUsers" store:Type="Tables" />
+          <EntitySet Name="userInteractionItemsCopy" EntityType="Self.userInteractionItemsCopy" Schema="logsInteractionsUsers" store:Type="Tables" />
+          <EntitySet Name="masterListItems" EntityType="Self.masterListItems" Schema="supplyChainMaster" store:Type="Tables" />
+          <EntitySet Name="masterListItemsCopy" EntityType="Self.masterListItemsCopy" Schema="supplyChainMaster" store:Type="Tables" />
+          <EntitySet Name="inventoryItems" EntityType="Self.inventoryItems" Schema="supplyItems" store:Type="Tables" />
+          <EntitySet Name="userLogs" EntityType="Self.userLogs" Schema="usersInfo" store:Type="Tables" />
+          <EntitySet Name="usersAccessInfo" EntityType="Self.usersAccessInfo" Schema="usersInfo" store:Type="Tables" />
+          <AssociationSet Name="Fk_usersAccessInfo" Association="Self.Fk_usersAccessInfo">
+            <End Role="usersAccessInfo" EntitySet="usersAccessInfo" />
+            <End Role="userLogs" EntitySet="userLogs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Supply_ChainModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="userInteractionItems">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Product" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Category" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="Month" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Hour" Type="Int32" />
+          <Property Name="Department" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="IP" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="URL" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="userInteractionItemsCopy">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Product" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Category" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Month" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Hour" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Department" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="IP" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="URL" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="masterListItems">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="DaysForShipReal" Type="Int32" />
+          <Property Name="DaysForShipmentScheduled" Type="Int32" />
+          <Property Name="BenefitPerOrder" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SalesPerCustomer" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DeliveryStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LateDelivery" Type="Boolean" />
+          <Property Name="CategoryId" Type="Int32" />
+          <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerCity" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerCountry" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerFName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerId" Type="Int32" />
+          <Property Name="CustomerLName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerPassword" Type="String" MaxLength="600" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerSegment" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerState" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerStreet" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerZipCode" Type="Int32" />
+          <Property Name="DepartmentId" Type="Int32" />
+          <Property Name="DepartmentName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Latitude" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Longtude" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Market" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="OrderCity" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="OrderCountry" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="OrderCustomerId" Type="Int32" />
+          <Property Name="OrderDateDateOrders" Type="DateTime" Precision="3" />
+          <Property Name="OrderId" Type="Int32" />
+          <Property Name="OrderCardpordId" Type="Int32" />
+          <Property Name="OrderItemDiscount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OrderDiscountRate" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OrderItemId" Type="Int32" />
+          <Property Name="OrderItemProductPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OrderItemProfitRatio" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OrderItemQuantity" Type="Int32" />
+          <Property Name="Sales" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OrderItemTotal" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OrderProfitPerOrder" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OrderRegion" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="OrderState" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="OrderStatus" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="OrderZipCode" Type="Int32" />
+          <Property Name="ProductCardId" Type="Int32" />
+          <Property Name="ProductCategoryId" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ProductDescription" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" />
+          <Property Name="ProductImage" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="ProductName" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="ProductPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ProductStatus" Type="Boolean" />
+          <Property Name="ShippingDateDateOrders" Type="DateTime" Precision="3" />
+          <Property Name="ShippingMode" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="masterListItemsCopy">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="DaysForShipReal" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DaysForShipmentScheduled" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="BenefitPerOrder" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SalesPerCustomer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DeliveryStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LateDelivery" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CategoryId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerCity" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerCountry" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerFName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerId" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerLName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerPassword" Type="String" MaxLength="600" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerSegment" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerState" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerStreet" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerZipCode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DepartmentId" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DepartmentName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Latitude" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Longtude" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Market" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="OrderCity" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="OrderCountry" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="OrderCustomerId" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="OrderDateDateOrders" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="OrderId" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="OrderCardpordId" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="OrderItemDiscount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OrderDiscountRate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OrderItemId" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="OrderItemProductPrice" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OrderItemProfitRatio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OrderItemQuantity" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Sales" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OrderItemTotal" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="OrderProfitPerOrder" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OrderRegion" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="OrderState" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="OrderStatus" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="OrderZipCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProductCardId" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ProductCategoryId" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ProductDescription" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" />
+          <Property Name="ProductImage" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="ProductName" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="ProductPrice" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProductStatus" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="ShippingDateDateOrders" Type="DateTime" Precision="3" />
+          <Property Name="ShippingMode" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="Supply_ChainEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="userInteractionItems" EntityType="Self.userInteractionItems" />
+          <EntitySet Name="userInteractionItemsCopy" EntityType="Self.userInteractionItemsCopy" />
+          <EntitySet Name="masterListItems" EntityType="Self.masterListItems" />
+          <EntitySet Name="masterListItemsCopy" EntityType="Self.masterListItemsCopy" />
+          <EntitySet Name="userLogs" EntityType="Supply_ChainModel.userLogs" />
+          <EntitySet Name="usersAccessInfo" EntityType="Supply_ChainModel.usersAccessInfo" />
+          <AssociationSet Name="Fk_usersAccessInfo" Association="Supply_ChainModel.Fk_usersAccessInfo">
+            <End Role="usersAccessInfo" EntitySet="usersAccessInfo" />
+            <End Role="userLogs" EntitySet="userLogs" />
+          </AssociationSet>
+          <EntitySet Name="inventoryItems" EntityType="Supply_ChainModel.inventoryItems" />
+        </EntityContainer>
+        <EntityType Name="userLogs">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idUserInfo" Type="Int32" />
+          <Property Name="logDateStart" Type="Int32" />
+          <Property Name="logsDateEnd" Type="Int32" />
+          <Property Name="logActive" Type="Boolean" />
+          <Property Name="logTryOk" Type="Boolean" />
+          <NavigationProperty Name="usersAccessInfo" Relationship="Supply_ChainModel.Fk_usersAccessInfo" FromRole="userLogs" ToRole="usersAccessInfo" />
+        </EntityType>
+        <EntityType Name="usersAccessInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idUser" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="lastName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="passwordSalt" Type="String" MaxLength="800" FixedLength="false" Unicode="false" />
+          <Property Name="passwordHashing" Type="String" MaxLength="800" FixedLength="false" Unicode="false" />
+          <Property Name="userType" Type="Int32" />
+          <Property Name="userEmail" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="userEmailConfirm" Type="Boolean" />
+          <NavigationProperty Name="userLogs" Relationship="Supply_ChainModel.Fk_usersAccessInfo" FromRole="usersAccessInfo" ToRole="userLogs" />
+        </EntityType>
+        <Association Name="Fk_usersAccessInfo">
+          <End Type="Supply_ChainModel.usersAccessInfo" Role="usersAccessInfo" Multiplicity="0..1" />
+          <End Type="Supply_ChainModel.userLogs" Role="userLogs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usersAccessInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="userLogs">
+              <PropertyRef Name="idUserInfo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="inventoryItems">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ItemName" Type="String" Nullable="false" MaxLength="400" FixedLength="false" Unicode="false" />
+          <Property Name="ItemDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="ItemPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="ItemImage" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="CategoryName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DepartmentName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ProductImage" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Stock" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Supply_ChainModelStoreContainer" CdmEntityContainer="Supply_ChainEntities1">
+          <EntitySetMapping Name="userInteractionItems">
+            <EntityTypeMapping TypeName="Supply_ChainModel.userInteractionItems">
+              <MappingFragment StoreEntitySet="userInteractionItems">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Month" ColumnName="Month" />
+                <ScalarProperty Name="Hour" ColumnName="Hour" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="IP" ColumnName="IP" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="userInteractionItemsCopy">
+            <EntityTypeMapping TypeName="Supply_ChainModel.userInteractionItemsCopy">
+              <MappingFragment StoreEntitySet="userInteractionItemsCopy">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Month" ColumnName="Month" />
+                <ScalarProperty Name="Hour" ColumnName="Hour" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="IP" ColumnName="IP" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="masterListItems">
+            <EntityTypeMapping TypeName="Supply_ChainModel.masterListItems">
+              <MappingFragment StoreEntitySet="masterListItems">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="DaysForShipReal" ColumnName="DaysForShipReal" />
+                <ScalarProperty Name="DaysForShipmentScheduled" ColumnName="DaysForShipmentScheduled" />
+                <ScalarProperty Name="BenefitPerOrder" ColumnName="BenefitPerOrder" />
+                <ScalarProperty Name="SalesPerCustomer" ColumnName="SalesPerCustomer" />
+                <ScalarProperty Name="DeliveryStatus" ColumnName="DeliveryStatus" />
+                <ScalarProperty Name="LateDelivery" ColumnName="LateDelivery" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="CustomerCity" ColumnName="CustomerCity" />
+                <ScalarProperty Name="CustomerCountry" ColumnName="CustomerCountry" />
+                <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
+                <ScalarProperty Name="CustomerFName" ColumnName="CustomerFName" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="CustomerLName" ColumnName="CustomerLName" />
+                <ScalarProperty Name="CustomerPassword" ColumnName="CustomerPassword" />
+                <ScalarProperty Name="CustomerSegment" ColumnName="CustomerSegment" />
+                <ScalarProperty Name="CustomerState" ColumnName="CustomerState" />
+                <ScalarProperty Name="CustomerStreet" ColumnName="CustomerStreet" />
+                <ScalarProperty Name="CustomerZipCode" ColumnName="CustomerZipCode" />
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longtude" ColumnName="Longtude" />
+                <ScalarProperty Name="Market" ColumnName="Market" />
+                <ScalarProperty Name="OrderCity" ColumnName="OrderCity" />
+                <ScalarProperty Name="OrderCountry" ColumnName="OrderCountry" />
+                <ScalarProperty Name="OrderCustomerId" ColumnName="OrderCustomerId" />
+                <ScalarProperty Name="OrderDateDateOrders" ColumnName="OrderDateDateOrders" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="OrderCardpordId" ColumnName="OrderCardpordId" />
+                <ScalarProperty Name="OrderItemDiscount" ColumnName="OrderItemDiscount" />
+                <ScalarProperty Name="OrderDiscountRate" ColumnName="OrderDiscountRate" />
+                <ScalarProperty Name="OrderItemId" ColumnName="OrderItemId" />
+                <ScalarProperty Name="OrderItemProductPrice" ColumnName="OrderItemProductPrice" />
+                <ScalarProperty Name="OrderItemProfitRatio" ColumnName="OrderItemProfitRatio" />
+                <ScalarProperty Name="OrderItemQuantity" ColumnName="OrderItemQuantity" />
+                <ScalarProperty Name="Sales" ColumnName="Sales" />
+                <ScalarProperty Name="OrderItemTotal" ColumnName="OrderItemTotal" />
+                <ScalarProperty Name="OrderProfitPerOrder" ColumnName="OrderProfitPerOrder" />
+                <ScalarProperty Name="OrderRegion" ColumnName="OrderRegion" />
+                <ScalarProperty Name="OrderState" ColumnName="OrderState" />
+                <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+                <ScalarProperty Name="OrderZipCode" ColumnName="OrderZipCode" />
+                <ScalarProperty Name="ProductCardId" ColumnName="ProductCardId" />
+                <ScalarProperty Name="ProductCategoryId" ColumnName="ProductCategoryId" />
+                <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+                <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductPrice" ColumnName="ProductPrice" />
+                <ScalarProperty Name="ProductStatus" ColumnName="ProductStatus" />
+                <ScalarProperty Name="ShippingDateDateOrders" ColumnName="ShippingDateDateOrders" />
+                <ScalarProperty Name="ShippingMode" ColumnName="ShippingMode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="masterListItemsCopy">
+            <EntityTypeMapping TypeName="Supply_ChainModel.masterListItemsCopy">
+              <MappingFragment StoreEntitySet="masterListItemsCopy">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="DaysForShipReal" ColumnName="DaysForShipReal" />
+                <ScalarProperty Name="DaysForShipmentScheduled" ColumnName="DaysForShipmentScheduled" />
+                <ScalarProperty Name="BenefitPerOrder" ColumnName="BenefitPerOrder" />
+                <ScalarProperty Name="SalesPerCustomer" ColumnName="SalesPerCustomer" />
+                <ScalarProperty Name="DeliveryStatus" ColumnName="DeliveryStatus" />
+                <ScalarProperty Name="LateDelivery" ColumnName="LateDelivery" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="CustomerCity" ColumnName="CustomerCity" />
+                <ScalarProperty Name="CustomerCountry" ColumnName="CustomerCountry" />
+                <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
+                <ScalarProperty Name="CustomerFName" ColumnName="CustomerFName" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="CustomerLName" ColumnName="CustomerLName" />
+                <ScalarProperty Name="CustomerPassword" ColumnName="CustomerPassword" />
+                <ScalarProperty Name="CustomerSegment" ColumnName="CustomerSegment" />
+                <ScalarProperty Name="CustomerState" ColumnName="CustomerState" />
+                <ScalarProperty Name="CustomerStreet" ColumnName="CustomerStreet" />
+                <ScalarProperty Name="CustomerZipCode" ColumnName="CustomerZipCode" />
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longtude" ColumnName="Longtude" />
+                <ScalarProperty Name="Market" ColumnName="Market" />
+                <ScalarProperty Name="OrderCity" ColumnName="OrderCity" />
+                <ScalarProperty Name="OrderCountry" ColumnName="OrderCountry" />
+                <ScalarProperty Name="OrderCustomerId" ColumnName="OrderCustomerId" />
+                <ScalarProperty Name="OrderDateDateOrders" ColumnName="OrderDateDateOrders" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="OrderCardpordId" ColumnName="OrderCardpordId" />
+                <ScalarProperty Name="OrderItemDiscount" ColumnName="OrderItemDiscount" />
+                <ScalarProperty Name="OrderDiscountRate" ColumnName="OrderDiscountRate" />
+                <ScalarProperty Name="OrderItemId" ColumnName="OrderItemId" />
+                <ScalarProperty Name="OrderItemProductPrice" ColumnName="OrderItemProductPrice" />
+                <ScalarProperty Name="OrderItemProfitRatio" ColumnName="OrderItemProfitRatio" />
+                <ScalarProperty Name="OrderItemQuantity" ColumnName="OrderItemQuantity" />
+                <ScalarProperty Name="Sales" ColumnName="Sales" />
+                <ScalarProperty Name="OrderItemTotal" ColumnName="OrderItemTotal" />
+                <ScalarProperty Name="OrderProfitPerOrder" ColumnName="OrderProfitPerOrder" />
+                <ScalarProperty Name="OrderRegion" ColumnName="OrderRegion" />
+                <ScalarProperty Name="OrderState" ColumnName="OrderState" />
+                <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+                <ScalarProperty Name="OrderZipCode" ColumnName="OrderZipCode" />
+                <ScalarProperty Name="ProductCardId" ColumnName="ProductCardId" />
+                <ScalarProperty Name="ProductCategoryId" ColumnName="ProductCategoryId" />
+                <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+                <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductPrice" ColumnName="ProductPrice" />
+                <ScalarProperty Name="ProductStatus" ColumnName="ProductStatus" />
+                <ScalarProperty Name="ShippingDateDateOrders" ColumnName="ShippingDateDateOrders" />
+                <ScalarProperty Name="ShippingMode" ColumnName="ShippingMode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="userLogs">
+            <EntityTypeMapping TypeName="Supply_ChainModel.userLogs">
+              <MappingFragment StoreEntitySet="userLogs">
+                <ScalarProperty Name="logTryOk" ColumnName="logTryOk" />
+                <ScalarProperty Name="logActive" ColumnName="logActive" />
+                <ScalarProperty Name="logsDateEnd" ColumnName="logsDateEnd" />
+                <ScalarProperty Name="logDateStart" ColumnName="logDateStart" />
+                <ScalarProperty Name="idUserInfo" ColumnName="idUserInfo" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usersAccessInfo">
+            <EntityTypeMapping TypeName="Supply_ChainModel.usersAccessInfo">
+              <MappingFragment StoreEntitySet="usersAccessInfo">
+                <ScalarProperty Name="userEmailConfirm" ColumnName="userEmailConfirm" />
+                <ScalarProperty Name="userEmail" ColumnName="userEmail" />
+                <ScalarProperty Name="userType" ColumnName="userType" />
+                <ScalarProperty Name="passwordHashing" ColumnName="passwordHashing" />
+                <ScalarProperty Name="passwordSalt" ColumnName="passwordSalt" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="idUser" ColumnName="idUser" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inventoryItems">
+            <EntityTypeMapping TypeName="Supply_ChainModel.inventoryItems">
+              <MappingFragment StoreEntitySet="inventoryItems">
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+                <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="ItemImage" ColumnName="ItemImage" />
+                <ScalarProperty Name="ItemPrice" ColumnName="ItemPrice" />
+                <ScalarProperty Name="ItemDescription" ColumnName="ItemDescription" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

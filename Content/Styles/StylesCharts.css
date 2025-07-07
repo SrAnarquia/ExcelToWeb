@@ -1,0 +1,90 @@
+﻿.filters-horizontal {
+    background-color: #f1f3f5; /* Cambiado a gris elegante */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px 30px;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+.filter-group {
+    flex: 1;
+    min-width: 150px;
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+    .filter-group label {
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: #343a40;
+    }
+
+    .filter-group input,
+    .filter-group select {
+        padding: 8px 10px;
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+        font-size: 14px;
+        background-color: #ffffff;
+    }
+
+.search-button-container {
+    display: flex;
+    align-items: flex-end;
+}
+
+.btn-apply {
+    background-color: #1d3557;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+    .btn-apply:hover {
+        background-color: #2d5d8a;
+    }
+
+/* Contenedor de dashboard */
+.dashboard-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    padding: 20px 10px;
+    background-color: #fffefc;
+}
+
+/* Sección individual de gráfica */
+.chart-section {
+    width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
+    border: 1px solid #dee2e6;
+}
+
+.chart-header {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #1d3557;
+    text-align: center;
+}
+
+.chart-canvas {
+    width: 100% !important;
+    height: 200px !important;
+}

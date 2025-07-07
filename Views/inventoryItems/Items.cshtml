@@ -1,0 +1,99 @@
+﻿@model List<ExcelToWeb.Models.inventoryItems>
+
+@{
+    ViewBag.Title = "Marketplace";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<link href="~/Content/Styles/StylesItemsSearch.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+
+<div class="marketplace-container">
+
+    <!-- 🔍 Barra de búsqueda -->
+    <div class="search-bar-container">
+        <form class="search-bar-form" method="get" action="#">
+            <input id="search" type="text" class="search-input" placeholder="Buscar productos, marcas, categorías..." />
+            <button type="submit" class="search-button">
+                <span class="material-icons">search</span>
+            </button>
+        </form>
+
+        <!-- Ícono carrito junto a la barra -->
+        <a href="/Cart" class="cart-icon-inline" title="Ver carrito">
+            <span class="material-icons">shopping_cart</span>
+            <span class="cart-count">0</span>
+        </a>
+    </div>
+
+    <!-- 🧭 Filtros + productos -->
+    <div class="main-content">
+
+        <!-- 📊 Filtros -->
+        <aside class="sidebar-filters">
+            <h3>Filtros</h3>
+
+            <div class="filter-group">
+                <label for="category">Categoría</label>
+                <select id="category" name="category">
+                    <option value="">Todas</option>
+                    <option value="electronics">Electrónica</option>
+                    <option value="fashion">Ropa</option>
+                    <option value="home">Hogar</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="priceRange">Precio</label>
+                <input type="range" id="priceRange" min="0" max="1000" />
+                <span id="priceRangeValue">$0 - $1000</span>
+            </div>
+
+            <div class="filter-group">
+                <label for="rating">Calificación mínima</label>
+                <select id="rating">
+                    <option value="">Todas</option>
+                    <option value="4">★★★★ o más</option>
+                    <option value="3">★★★ o más</option>
+                    <option value="2">★★ o más</option>
+                </select>
+            </div>
+
+            <button class="btn-apply-filters">Aplicar filtros</button>
+        </aside>
+
+        <!-- 🛒 Productos + paginación -->
+        <div class="product-content-wrapper">
+            <section class="product-grid">
+                @foreach (var item in Model)
+                {
+                    <div class="product-card">
+                        <img src="~/Content/img/box.png" alt="@item.ItemName" />
+                        <h4>@item.ItemName</h4>
+                        <p class="price">$@item.ItemPrice</p>
+                        <p class="rating">★★★★☆</p>
+                        <button class="btn-view add-to-cart-btn" title="Agregar al carrito">
+                            <span class="material-icons">add_shopping_cart</span> Agregar
+                        </button>
+
+                    </div>
+                }
+            </section>
+
+            <!-- 🔢 Paginación -->
+            <nav aria-label="Paginación">
+                <ul class="pagination justify-content-center">
+                    @for (int i = 1; i <= (int)ViewBag.TotalPages; i++)
+                    {
+                        var activeClass = i == (int)ViewBag.Page ? "active" : "";
+                        <li class="page-item @activeClass">
+                            <a class="page-link" href="@Url.Action("Items", new { page = i })">@i</a>
+                        </li>
+                    }
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>

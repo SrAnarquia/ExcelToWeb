@@ -1,0 +1,78 @@
+﻿.filter-section {
+    background-color: #f4f7fa;
+    padding: 20px 30px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+    .filter-section h2 {
+        color: #0d1b2a;
+        margin-bottom: 15px;
+    }
+
+.filters-horizontal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-end;
+}
+
+.filter-group {
+    flex: 1 1 220px;
+    display: flex;
+    flex-direction: column;
+}
+
+    .filter-group label {
+        margin-bottom: 4px;
+        color: #333;
+        font-weight: 600;
+    }
+
+    .filter-group input,
+    .filter-group select {
+        padding: 6px 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+    }
+
+.search-button-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn-apply {
+    background-color: #0d1b2a;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 600;
+}
+
+    .btn-apply:hover {
+        background-color: #1a2c45;
+    }
+
+.table {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+/*This is for table headers*/
+#TableHeader {
+    background-color: #00264d;
+    color: white;
+}

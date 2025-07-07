@@ -1,0 +1,50 @@
+﻿@model ExcelToWeb.Models.ViewModels.userLoginViewModel
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<div class="login-container">
+    <h2 class="login-title">Iniciar Sesión</h2>
+    @*In case of errros, this will be shown*@
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["Error"]
+        </div>
+    }
+
+    @using (Html.BeginForm("Login", "usersAccessInfoes", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        @*This is for global errors*@
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            <label for="UserId">Usuario</label>
+            @Html.TextBoxFor(m => m.idUser, new { @class = "form-control", placeholder = "Ingresa tu usuario o Email", id = "userId", name = "userId", required = "required" })
+            @Html.ValidationMessageFor(m => m.idUser, "", new { @class = "text-danger" })
+
+        </div>
+
+        <div class="form-group">
+            <label for="Password">Contraseña</label>
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Ingresa tu contraseña", id = "Password", name = "Password", required = "required" })
+            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+
+        </div>
+
+        <button type="submit" class="btn-login">Iniciar Sesión</button>
+
+
+    }
+
+
+    <p class="register-link">
+        ¿No tienes una cuenta?
+        <a href="@Url.Action("Create", "usersAccessInfoes")">Crear cuenta</a>
+    </p>
+</div>

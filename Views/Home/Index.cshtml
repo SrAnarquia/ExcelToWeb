@@ -1,0 +1,117 @@
+﻿@using Newtonsoft.Json;
+@{
+
+
+    ViewBag.Title = "Reporte gerenencial";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    @*Este es para top 10 categorias*@
+    var jsonDataCategory = ViewBag.CategorySalesDataJson as string;
+    @*Este es para top 10 paises*@
+    var jsonDataCountries = ViewBag.CountrySalesDataJson as string;
+
+    @*Este es para los gastos mensuales*@
+    var jsonDataMonthlyProfit = Html.Raw(ViewBag.MonthlyProfitDataJson);
+
+    @*Este es para los delay mensuales*@
+    var jsonDataMonthlyDelay = Html.Raw(ViewBag.MonthlyDelayDataJson);
+
+}
+
+<link href="~/Content/Styles/StylesCharts.css" rel="stylesheet" type="text/css" />
+
+<div class="filter-section">
+    <h2>🎯 Filtros de búsqueda</h2>
+    <div class="filters-horizontal">
+
+        <div class="filter-group">
+            <label for="startDateFilter">Fecha inicio:</label>
+            <input type="date" id="startDateFilter" name="startDateFilter" />
+        </div>
+
+        <div class="filter-group">
+            <label for="endDateFilter">Fecha fin:</label>
+            <input type="date" id="endDateFilter" name="endDateFilter" />
+        </div>
+
+        <div class="filter-group">
+            <label for="categoryFilter">Categoría:</label>
+            <select id="categoryFilter">
+                <option value="">Todas</option>
+                <option value="electronics">Electrónica</option>
+                <option value="fitness">Fitness</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="countryFilter">País:</label>
+            <select id="countryFilter">
+                <option value="">Todos</option>
+                <option value="USA">Estados Unidos</option>
+                <option value="Mexico">México</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="segmentFilter">Tipo de cliente:</label>
+            <select id="segmentFilter">
+                <option value="">Todos</option>
+                <option value="Consumer">Consumidor</option>
+                <option value="Corporate">Corporativo</option>
+                <option value="Home Office">Oficina en casa</option>
+            </select>
+        </div>
+
+        <div class="search-button-container" style="gap: 10px;">
+            <!-- Exportar a Excel -->
+            <button class="btn-apply btn-excel" title="Exportar a Excel">
+                <span class="material-icons">description</span>
+            </button>
+
+            <!-- Enviar por Mail -->
+            <button class="btn-apply btn-mail" title="Enviar por correo">
+                <span class="material-icons">email</span>
+            </button>
+
+            <!-- Buscar -->
+             <button type="submit" class="btn-apply">🔍 Buscar</button>
+        </div>
+
+    </div>
+</div>
+
+
+
+<!-- Sección de gráficas principales -->
+<div class="dashboard-container">
+    <div class="chart-section">
+        <div class="chart-header">📦 Top 10 categorias más vendidos del mes</div>
+        <canvas id="topProductsChart" class="chart-canvas" data-chart='@jsonDataCategory'></canvas>
+    </div>
+
+    <div class="chart-section">
+        <div class="chart-header">🌍 Top 10 países con mayores compras del mes</div>
+        <canvas id="topCountriesChart" class="chart-canvas" data-chart='@jsonDataCountries'></canvas>
+    </div>
+</div>
+
+<div class="dashboard-container">
+    <div class="chart-section">
+        <div class="chart-header">📈 Ganancias por mes</div>
+        <canvas id="monthlyProfitChart" class="chart-canvas" data-chart='@jsonDataMonthlyProfit'></canvas>
+    </div>
+
+    <div class="chart-section">
+        <div class="chart-header">🚚 Entregas con retraso por mes</div>
+        <canvas id="monthlyDelaysChart" class="chart-canvas" data-chart='@jsonDataMonthlyDelay' ></canvas>
+    </div>
+</div>
+
+<!-- Cargamos el archivo js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Ahora cargamos el script -->
+<script src="~/Scripts/chartsManager/chartsManagersCreationCountries.js"></script>
+<script src="~/Scripts/chartsManager/chartsManagersCreationCategories.js"></script>
+<script src="~/Scripts/chartsManager/chartsManagersCreationSales.js"></script>
+<script src="~/Scripts/chartsManager/chartsManagersCreationDelay.js"></script>

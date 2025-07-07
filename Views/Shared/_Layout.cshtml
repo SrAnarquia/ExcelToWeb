@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="@Url.Content("~/Content/img/supplyIco.ico")">
+    <link href="~/Content/Styles/Styles.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>@ViewBag.Title</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-custom navbar-dark">
+
+        <div class="container-fluid">
+
+            <a class="navbar-brand">
+                <img style="height:40px;width:auto;" src="~/Content/img/Delivery.png" />
+            </a>
+            @Html.ActionLink("Supply Hub", "Items", "inventoryItems", new { area = "" }, new { @class = "navbar-brand" })
+
+            <div class="container">
+
+                <div class="d-flex ms-auto align-items-center justify-content-end">
+                    <ul class="navbar-nav">
+                        @*Reportes Manager y de Interacciones*@
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="interactionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Reportes
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="interactionsDropdown">
+                                <li>@Html.ActionLink("Gerencia", "Index", "Home", null, new { @class = "dropdown-item" })</li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li>@Html.ActionLink("Interacciones", "Index", "userInteractionItems", null, new { @class = "dropdown-item" })</li>
+                            </ul>
+                        </li>
+
+                        @*Tables administration*@
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="customerDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Compradores
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="customerDropdown">
+                                <li>@Html.ActionLink("Informacion", "customerMain", "masterListItems", null, new { @class = "dropdown-item" })</li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li>@Html.ActionLink("Historial", "Index", "masterListItems", null, new { @class = "dropdown-item" })</li>
+                            </ul>
+
+
+                        </li>
+
+
+                        <li class="nav-item"> <i class="nav-link">|</i> </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="cuentaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Cuenta
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="cuentaDropdown">
+
+                                <li>@Html.ActionLink("Información", "Details", "usersAccessInfoes", new { id = Session["idUser"] }, new { @class = "dropdown-item" })</li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li>@Html.ActionLink("Cerrar Sesión", "logOut", "usersAccessInfoes", null, new { @class = "dropdown-item" })</li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Jonathan Corpus & Associates | Todos los derechos reservados</p>
+            <input type="text" name="Id" value="1" hidden    />
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @*Dejarlo causa errores*@
+    @*Scripts.Render("~/bundles/bootstrap")*@
+    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

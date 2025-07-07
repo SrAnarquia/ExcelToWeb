@@ -1,0 +1,114 @@
+﻿@model IEnumerable<ExcelToWeb.Models.masterListItems>
+@{
+    ViewBag.Title = "Historial de compras";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/Styles/StylesCustomers.css" rel="stylesheet" />
+
+
+<!-- Filtros -->
+<div class="filter-section">
+    <h2>🎯 Filtros de búsqueda</h2>
+    <form method="get" action="@Url.Action("Index")">
+        <div class="filters-horizontal">
+
+            <div class="filter-group">
+                <label for="startDateFilter">Fecha inicio:</label>
+                <input type="date" id="startDateFilter" name="startDateFilter" />
+            </div>
+
+            <div class="filter-group">
+                <label for="endDateFilter">Fecha fin:</label>
+                <input type="date" id="endDateFilter" name="endDateFilter" />
+            </div>
+
+            <div class="filter-group">
+                <label for="categoryFilter">Categoría:</label>
+                <select id="categoryFilter" name="categoryFilter">
+                    <option value="">Todas</option>
+                    <option value="electronics">Electrónica</option>
+                    <option value="fitness">Fitness</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="countryFilter">País:</label>
+                <select id="countryFilter" name="countryFilter">
+                    <option value="">Todos</option>
+                    <option value="USA">Estados Unidos</option>
+                    <option value="Mexico">México</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="segmentFilter">Tipo de cliente:</label>
+                <select id="segmentFilter" name="segmentFilter">
+                    <option value="">Todos</option>
+                    <option value="Consumer">Consumidor</option>
+                    <option value="Corporate">Corporativo</option>
+                    <option value="Home Office">Oficina en casa</option>
+                </select>
+            </div>
+
+            <div class="search-button-container" style="gap: 10px;">
+                <!-- Exportar a Excel -->
+                <button class="btn-apply btn-excel" title="Exportar a Excel">
+                    <span class="material-icons">description</span>
+                </button>
+
+                <!-- Buscar -->
+                <button type="submit" class="btn-apply">🔍 Buscar</button>
+            </div>
+
+        </div>
+    </form>
+</div>
+
+<!-- Tabla de datos con estilo empresarial -->
+<div class="table-responsive">
+    <table class="table table-hover customer-table">
+        <thead>
+            <tr id="TableHeader">
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>País</th>
+                <th>Segmento</th>
+                <th>Estado Entrega</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.CustomerFName</td>
+                    <td>@item.CustomerLName</td>
+                    <td>@item.CustomerCountry</td>
+                    <td>@item.CustomerSegment</td>
+                    <td>@item.DeliveryStatus</td>
+                    <td>
+                        <a href="@Url.Action("Details", "masterListItems",  new { id = item.Id })" class="btn btn-sm btn-outline-primary" title="Ver perfil">
+                            <span class="material-icons">visibility</span>
+                        </a>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+<!-- Paginación -->
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+        @for (int i = 1; i <= (int)ViewBag.TotalPages; i++)
+        {
+            var activeClass = i == (int)ViewBag.Page ? "active" : "";
+            <li class="page-item @activeClass">
+                <a class="page-link" href="@Url.Action("Index", new { page = i })">@i</a>
+            </li>
+        }
+    </ul>
+</nav>

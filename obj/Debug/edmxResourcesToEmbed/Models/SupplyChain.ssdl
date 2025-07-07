@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Supply_ChainModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="userInteractionItems">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Product" Type="varchar" MaxLength="500" />
+    <Property Name="Category" Type="varchar" MaxLength="250" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Month" Type="varchar" MaxLength="15" />
+    <Property Name="Hour" Type="int" />
+    <Property Name="Department" Type="varchar" MaxLength="30" />
+    <Property Name="IP" Type="varchar" MaxLength="200" />
+    <Property Name="URL" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="userInteractionItemsCopy">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Product" Type="varchar" MaxLength="500" />
+    <Property Name="Category" Type="varchar" MaxLength="250" />
+    <Property Name="Date" Type="varchar" MaxLength="250" />
+    <Property Name="Month" Type="varchar" MaxLength="15" />
+    <Property Name="Hour" Type="varchar" MaxLength="10" />
+    <Property Name="Department" Type="varchar" MaxLength="30" />
+    <Property Name="IP" Type="varchar" MaxLength="200" />
+    <Property Name="URL" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="masterListItems">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="varchar" MaxLength="500" />
+    <Property Name="DaysForShipReal" Type="int" />
+    <Property Name="DaysForShipmentScheduled" Type="int" />
+    <Property Name="BenefitPerOrder" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SalesPerCustomer" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="DeliveryStatus" Type="varchar" MaxLength="50" />
+    <Property Name="LateDelivery" Type="bit" />
+    <Property Name="CategoryId" Type="int" />
+    <Property Name="CategoryName" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerCity" Type="varchar" MaxLength="100" />
+    <Property Name="CustomerCountry" Type="varchar" MaxLength="100" />
+    <Property Name="CustomerEmail" Type="nvarchar" MaxLength="100" />
+    <Property Name="CustomerFName" Type="varchar" MaxLength="100" />
+    <Property Name="CustomerId" Type="int" />
+    <Property Name="CustomerLName" Type="varchar" MaxLength="500" />
+    <Property Name="CustomerPassword" Type="nvarchar" MaxLength="600" />
+    <Property Name="CustomerSegment" Type="varchar" MaxLength="100" />
+    <Property Name="CustomerState" Type="varchar" MaxLength="20" />
+    <Property Name="CustomerStreet" Type="varchar" MaxLength="120" />
+    <Property Name="CustomerZipCode" Type="int" />
+    <Property Name="DepartmentId" Type="int" />
+    <Property Name="DepartmentName" Type="varchar" MaxLength="500" />
+    <Property Name="Latitude" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Longtude" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Market" Type="varchar" MaxLength="250" />
+    <Property Name="OrderCity" Type="varchar" MaxLength="250" />
+    <Property Name="OrderCountry" Type="varchar" MaxLength="250" />
+    <Property Name="OrderCustomerId" Type="int" />
+    <Property Name="OrderDateDateOrders" Type="datetime" />
+    <Property Name="OrderId" Type="int" />
+    <Property Name="OrderCardpordId" Type="int" />
+    <Property Name="OrderItemDiscount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="OrderDiscountRate" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="OrderItemId" Type="int" />
+    <Property Name="OrderItemProductPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="OrderItemProfitRatio" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="OrderItemQuantity" Type="int" />
+    <Property Name="Sales" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="OrderItemTotal" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="OrderProfitPerOrder" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="OrderRegion" Type="varchar" MaxLength="250" />
+    <Property Name="OrderState" Type="varchar" MaxLength="250" />
+    <Property Name="OrderStatus" Type="varchar" MaxLength="250" />
+    <Property Name="OrderZipCode" Type="int" />
+    <Property Name="ProductCardId" Type="int" />
+    <Property Name="ProductCategoryId" Type="varchar" MaxLength="30" />
+    <Property Name="ProductDescription" Type="varchar" MaxLength="3000" />
+    <Property Name="ProductImage" Type="varchar" MaxLength="1000" />
+    <Property Name="ProductName" Type="varchar" MaxLength="300" />
+    <Property Name="ProductPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ProductStatus" Type="bit" />
+    <Property Name="ShippingDateDateOrders" Type="datetime" />
+    <Property Name="ShippingMode" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="masterListItemsCopy">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="varchar" MaxLength="500" />
+    <Property Name="DaysForShipReal" Type="varchar" MaxLength="30" />
+    <Property Name="DaysForShipmentScheduled" Type="varchar" MaxLength="30" />
+    <Property Name="BenefitPerOrder" Type="varchar" MaxLength="50" />
+    <Property Name="SalesPerCustomer" Type="varchar" MaxLength="50" />
+    <Property Name="DeliveryStatus" Type="varchar" MaxLength="50" />
+    <Property Name="LateDelivery" Type="varchar" MaxLength="50" />
+    <Property Name="CategoryId" Type="varchar" MaxLength="20" />
+    <Property Name="CategoryName" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerCity" Type="varchar" MaxLength="100" />
+    <Property Name="CustomerCountry" Type="varchar" MaxLength="100" />
+    <Property Name="CustomerEmail" Type="nvarchar" MaxLength="100" />
+    <Property Name="CustomerFName" Type="varchar" MaxLength="100" />
+    <Property Name="CustomerId" Type="varchar" MaxLength="30" />
+    <Property Name="CustomerLName" Type="varchar" MaxLength="500" />
+    <Property Name="CustomerPassword" Type="nvarchar" MaxLength="600" />
+    <Property Name="CustomerSegment" Type="varchar" MaxLength="100" />
+    <Property Name="CustomerState" Type="varchar" MaxLength="20" />
+    <Property Name="CustomerStreet" Type="varchar" MaxLength="120" />
+    <Property Name="CustomerZipCode" Type="varchar" MaxLength="30" />
+    <Property Name="DepartmentId" Type="varchar" MaxLength="30" />
+    <Property Name="DepartmentName" Type="varchar" MaxLength="500" />
+    <Property Name="Latitude" Type="varchar" MaxLength="50" />
+    <Property Name="Longtude" Type="varchar" MaxLength="50" />
+    <Property Name="Market" Type="varchar" MaxLength="250" />
+    <Property Name="OrderCity" Type="varchar" MaxLength="250" />
+    <Property Name="OrderCountry" Type="varchar" MaxLength="250" />
+    <Property Name="OrderCustomerId" Type="varchar" MaxLength="30" />
+    <Property Name="OrderDateDateOrders" Type="varchar" MaxLength="100" />
+    <Property Name="OrderId" Type="varchar" MaxLength="30" />
+    <Property Name="OrderCardpordId" Type="varchar" MaxLength="30" />
+    <Property Name="OrderItemDiscount" Type="varchar" MaxLength="50" />
+    <Property Name="OrderDiscountRate" Type="varchar" MaxLength="50" />
+    <Property Name="OrderItemId" Type="varchar" MaxLength="30" />
+    <Property Name="OrderItemProductPrice" Type="varchar" MaxLength="50" />
+    <Property Name="OrderItemProfitRatio" Type="varchar" MaxLength="50" />
+    <Property Name="OrderItemQuantity" Type="varchar" MaxLength="30" />
+    <Property Name="Sales" Type="varchar" MaxLength="50" />
+    <Property Name="OrderItemTotal" Type="varchar" MaxLength="30" />
+    <Property Name="OrderProfitPerOrder" Type="varchar" MaxLength="50" />
+    <Property Name="OrderRegion" Type="varchar" MaxLength="250" />
+    <Property Name="OrderState" Type="varchar" MaxLength="250" />
+    <Property Name="OrderStatus" Type="varchar" MaxLength="250" />
+    <Property Name="OrderZipCode" Type="varchar" MaxLength="50" />
+    <Property Name="ProductCardId" Type="varchar" MaxLength="30" />
+    <Property Name="ProductCategoryId" Type="varchar" MaxLength="30" />
+    <Property Name="ProductDescription" Type="varchar" MaxLength="3000" />
+    <Property Name="ProductImage" Type="varchar" MaxLength="1000" />
+    <Property Name="ProductName" Type="varchar" MaxLength="300" />
+    <Property Name="ProductPrice" Type="varchar" MaxLength="50" />
+    <Property Name="ProductStatus" Type="varchar" MaxLength="40" />
+    <Property Name="ShippingDateDateOrders" Type="datetime" />
+    <Property Name="ShippingMode" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="inventoryItems">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemName" Type="varchar" MaxLength="400" Nullable="false" />
+    <Property Name="ItemDescription" Type="varchar" MaxLength="1000" />
+    <Property Name="ItemPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="ItemImage" Type="varchar" MaxLength="1000" />
+    <Property Name="CategoryName" Type="varchar" MaxLength="100" />
+    <Property Name="DepartmentName" Type="varchar" MaxLength="100" />
+    <Property Name="ProductImage" Type="varchar" MaxLength="1000" />
+    <Property Name="Stock" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="userLogs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idUserInfo" Type="int" />
+    <Property Name="logDateStart" Type="int" />
+    <Property Name="logsDateEnd" Type="int" />
+    <Property Name="logActive" Type="bit" />
+    <Property Name="logTryOk" Type="bit" />
+  </EntityType>
+  <EntityType Name="usersAccessInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idUser" Type="varchar" MaxLength="250" />
+    <Property Name="name" Type="varchar" MaxLength="250" />
+    <Property Name="lastName" Type="varchar" MaxLength="250" />
+    <Property Name="passwordSalt" Type="varchar" MaxLength="800" />
+    <Property Name="passwordHashing" Type="varchar" MaxLength="800" />
+    <Property Name="userType" Type="int" />
+    <Property Name="userEmail" Type="nvarchar" MaxLength="500" />
+    <Property Name="userEmailConfirm" Type="bit" />
+  </EntityType>
+  <Association Name="Fk_usersAccessInfo">
+    <End Role="usersAccessInfo" Type="Self.usersAccessInfo" Multiplicity="0..1" />
+    <End Role="userLogs" Type="Self.userLogs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usersAccessInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="userLogs">
+        <PropertyRef Name="idUserInfo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Supply_ChainModelStoreContainer">
+    <EntitySet Name="userInteractionItems" EntityType="Self.userInteractionItems" Schema="logsInteractionsUsers" store:Type="Tables" />
+    <EntitySet Name="userInteractionItemsCopy" EntityType="Self.userInteractionItemsCopy" Schema="logsInteractionsUsers" store:Type="Tables" />
+    <EntitySet Name="masterListItems" EntityType="Self.masterListItems" Schema="supplyChainMaster" store:Type="Tables" />
+    <EntitySet Name="masterListItemsCopy" EntityType="Self.masterListItemsCopy" Schema="supplyChainMaster" store:Type="Tables" />
+    <EntitySet Name="inventoryItems" EntityType="Self.inventoryItems" Schema="supplyItems" store:Type="Tables" />
+    <EntitySet Name="userLogs" EntityType="Self.userLogs" Schema="usersInfo" store:Type="Tables" />
+    <EntitySet Name="usersAccessInfo" EntityType="Self.usersAccessInfo" Schema="usersInfo" store:Type="Tables" />
+    <AssociationSet Name="Fk_usersAccessInfo" Association="Self.Fk_usersAccessInfo">
+      <End Role="usersAccessInfo" EntitySet="usersAccessInfo" />
+      <End Role="userLogs" EntitySet="userLogs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

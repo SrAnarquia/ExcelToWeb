@@ -1,0 +1,64 @@
+﻿@model ExcelToWeb.Models.ViewModels.userRegisterViewModel
+
+@{
+    ViewBag.Title = "Registro";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<div class="login-container">
+    <h2 class="login-title">Crear Cuenta</h2>
+
+    @*This is the creation of a form and AntiForgeryToken*@
+    @using (Html.BeginForm("Create", "usersAccessInfoes", FormMethod.Post, new { id = "createUser" }))
+    {
+        @Html.AntiForgeryToken()
+
+        @*This is for global errors*@
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            <label for="Name">Nombre</label>
+            @Html.TextBoxFor(m => m.name, new { @class = "form-control", placeholder = "Ingresa tu nombre", id = "Name", name = "Name", required = "required" })
+            @Html.ValidationMessageFor(m => m.name, "", new { @class = "text-danger" })
+
+        </div>
+
+        <div class="form-group">
+            <label for="LastName">Apellido</label>
+            @Html.TextBoxFor(m => m.lastName, new { @class = "form-control", id = "LastName", name = "LastName", placeholder = "Ingresa tu apellido", required = "required" })
+            @Html.ValidationMessageFor(m => m.lastName, "", new { @class = "text-danger" })
+
+        </div>
+
+        <div class="form-group">
+            <label for="userEmail">Correo Electrónico</label>
+            @Html.TextBoxFor(m => m.userEmail, new { @class = "form-control", type = "email", id = "userEmail", name = "UserEmail", placeholder = "ejemplo@dominio.com", required = "required" })
+            @Html.ValidationMessageFor(m => m.userEmail, "", new { @class = "text-danger" })
+
+        </div>
+
+        <div class="form-group">
+            <label for="Password">Contraseña</label>
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control", id = "Password", name = "Password", placeholder = "Crea una contraseña", required = "required" })
+            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+
+        </div>
+
+        <div class="form-group">
+            <label for="ConfirmPassword">Confirmar Contraseña</label>
+            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", id = "ConfirmPassword", name = "ConfirmPassword", placeholder = "Repite tu contraseña" })
+            @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+
+        </div>
+
+        <button type="submit" class="btn-login">Registrar</button>
+
+
+    }
+
+
+    <p class="register-link">
+        ¿Ya tienes una cuenta?
+        <a href="@Url.Action("Index", "usersAccessInfoes")">Volver al Login</a>
+    </p>
+</div>

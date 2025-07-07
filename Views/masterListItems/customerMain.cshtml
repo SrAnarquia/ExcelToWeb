@@ -1,0 +1,113 @@
+﻿@model IEnumerable<ExcelToWeb.Models.masterListItems>
+@{
+    ViewBag.Title = "Catálogo de Compradores";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/Styles/StylesCustomers.css" rel="stylesheet" />
+
+<!-- Sección de Filtros -->
+<div class="filter-section">
+    <h2>🎯 Filtros de búsqueda</h2>
+    <form method="get" action="@Url.Action("customerMain")">
+        <div class="filters-horizontal">
+            <div class="filter-group">
+                <label for="startDateFilter">Fecha de inicio</label>
+                <input type="date" id="startDateFilter" name="startDateFilter" />
+            </div>
+
+            <div class="filter-group">
+                <label for="endDateFilter">Fecha fin</label>
+                <input type="date" id="endDateFilter" name="endDateFilter" />
+            </div>
+
+            <div class="filter-group">
+                <label for="countryFilter">País</label>
+                <select id="countryFilter" name="countryFilter">
+                    <option value="">Todos</option>
+                    <option value="Mexico">México</option>
+                    <option value="USA">Estados Unidos</option>
+                    <option value="Colombia">Colombia</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="cityFilter">Ciudad</label>
+                <input type="text" id="cityFilter" name="cityFilter" placeholder="Ej. Monterrey" />
+            </div>
+
+            <div class="filter-group">
+                <label for="segmentFilter">Segmento</label>
+                <select id="segmentFilter" name="segmentFilter">
+                    <option value="">Todos</option>
+                    <option value="Consumer">Consumidor</option>
+                    <option value="Corporate">Corporativo</option>
+                    <option value="Home Office">Oficina en casa</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="nameFilter">Nombre o Apellido</label>
+                <input type="text" id="nameFilter" name="nameFilter" placeholder="Ej. Jonathan" />
+            </div>
+
+            <div class="search-button-container">
+                <!-- Botón Buscar -->
+                <!-- Buscar -->
+                <button type="submit" class="btn-apply">🔍 Buscar</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- Catálogo de compradores -->
+<div class="catalog-container">
+    <h2 class="section-title">📘 Catálogo de Compradores</h2>
+
+    <div class="table-responsive">
+        <table class="table table-hover customer-table">
+            <thead>
+                <tr id="TableHeader">
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>País</th>
+                    <th>Ciudad</th>
+                    <th>Segmento</th>
+                    <th>Calle</th>
+                    <th style="text-align:center;">Perfil</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.CustomerFName @item.CustomerLName</td>
+                        <td>@item.CustomerEmail</td>
+                        <td>@item.CustomerCountry</td>
+                        <td>@item.CustomerCity</td>
+                        <td>@item.CustomerSegment</td>
+                        <td>@item.CustomerStreet</td>
+                        <td >
+                            <a href="@Url.Action("Information", "masterListItems", new { id = item.Id })" class="btn btn-sm btn-outline-primary" title="Ver perfil">
+                                <span class="material-icons">visibility</span>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Paginación -->
+    <nav aria-label="Paginación">
+        <ul class="pagination justify-content-center">
+            @for (int i = 1; i <= (int)ViewBag.TotalPages; i++)
+            {
+                var activeClass = i == (int)ViewBag.Page ? "active" : "";
+                <li class="page-item @activeClass">
+                    <a class="page-link" href="@Url.Action("Index", new { page = i })">@i</a>
+                </li>
+            }
+        </ul>
+    </nav>
+</div>

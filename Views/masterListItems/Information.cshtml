@@ -1,0 +1,38 @@
+﻿@model ExcelToWeb.Models.ViewModels.UserProfileInfoViewModel
+
+@{
+    ViewBag.Title = "Información del Cliente";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/Styles/StyleCustomersDetails.css" rel="stylesheet" />
+
+<h2 class="text-primary">👤 Perfil del Cliente</h2>
+
+<div class="details-container">
+    <div class="details-box">
+        <h4>🧾 Datos Generales</h4>
+        <p><strong>Nombre:</strong> @Model.FullName</p>
+        <p><strong>Ubicación:</strong> @Model.City, @Model.Country</p>
+        <p><strong>Segmento:</strong> @Model.Segment</p>
+        <p><strong>Cliente desde:</strong> @Model.FirstPurchaseDate.ToString("dd/MM/yyyy")</p>
+    </div>
+
+    <div class="details-box">
+        <h4>💰 Actividad de Compra</h4>
+        <p><strong>Compras Totales:</strong> $@Model.TotalSpent.ToString("N2")</p>
+        <p><strong>Items Comprados:</strong> @Model.TotalItemsPurchased</p>
+        <p><strong>Entregas Realizadas:</strong> @Model.DeliveriesCompleted</p>
+        <p><strong>Entregas Atrasadas:</strong> @Model.LateDeliveries</p>
+    </div>
+
+    <div class="details-box">
+        <h4>⭐ Productos Favoritos</h4>
+        <ul class="top-products-list">
+            @foreach (var item in Model.TopProducts)
+            {
+                <li><strong>@item.ProductName</strong> — @item.Quantity unidades</li>
+            }
+        </ul>
+    </div>
+</div>
